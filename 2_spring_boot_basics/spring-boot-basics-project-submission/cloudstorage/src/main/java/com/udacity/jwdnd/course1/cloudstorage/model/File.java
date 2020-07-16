@@ -14,36 +14,4 @@ public class File {
         this.filename = filename;
         this.filedata = filedata;
     }
-
-    public Integer getFileId() {
-        return fileid;
-    }
-
-    public void setFileId(int fileid) {
-        this.fileid = fileid;
-    }
-
-    public Integer getUserId() {
-        return userid;
-    }
-
-    public void setUserId(Integer userid) {
-        this.userid = userid;
-    }
-
-    public String getFilename() {
-        return filename;
-    }
-
-    public void setFilename(String filename) {
-        this.filename = filename;
-    }
-
-    public byte[] getFiledata() {
-        return filedata;
-    }
-
-    public void setFiledata(byte[] filedata) {
-        this.filedata = filedata;
-    }
 }
