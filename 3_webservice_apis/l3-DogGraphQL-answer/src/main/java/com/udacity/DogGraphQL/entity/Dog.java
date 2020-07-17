@@ -1,4 +1,4 @@
-package com.udacity.DogRestApi.entity;
+package com.udacity.DogGraphQL.entity;
 
 import javax.persistence.*;
 
@@ -15,12 +15,16 @@ public class Dog {
     public Dog(Long id, String name, String breed, String origin) {
         this.id = id;
         this.name = name;
-        breed = breed;
-        origin = origin;
+        this.breed = breed;
+        this.origin = origin;
     }
 
-    public Dog() {
+    public Dog(String name, String breed) {
+        this.name = name;
+        this.breed = breed;
     }
+
+    public Dog() {}
 
     public Long getId() {
         return id;
@@ -43,7 +47,7 @@ public class Dog {
     }
 
     public void setBreed(String breed) {
-        breed = breed;
+        this.breed = breed;
     }
 
     public String getOrigin() {
@@ -51,6 +55,6 @@ public class Dog {
     }
 
     public void setOrigin(String origin) {
-        origin = origin;
+        this.origin = origin;
     }
 }
