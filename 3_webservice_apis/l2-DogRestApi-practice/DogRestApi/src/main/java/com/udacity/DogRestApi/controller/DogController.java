@@ -1,4 +1,4 @@
-package com.udacity.DogRestApi.web;
+package com.udacity.DogRestApi.controller;
 
 import com.udacity.DogRestApi.entity.Dog;
 import com.udacity.DogRestApi.service.DogService;
@@ -33,7 +33,7 @@ public class DogController {
     }
 
     @GetMapping("/{id}/breed")
-    public ResponseEntity<String> getBreedByID(@PathVariable Long id) {
+    public ResponseEntity<String> getBreedById(@PathVariable Long id) {
         String breed = dogService.retrieveDogBreedById(id);
         return new ResponseEntity<String>(breed, HttpStatus.OK);
     }

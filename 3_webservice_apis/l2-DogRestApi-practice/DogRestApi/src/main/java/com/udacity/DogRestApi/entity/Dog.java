@@ -15,16 +15,12 @@ public class Dog {
     public Dog(Long id, String name, String breed, String origin) {
         this.id = id;
         this.name = name;
-        this.breed = breed;
-        this.origin = origin;
+        breed = breed;
+        origin = origin;
     }
 
-    public Dog(String name, String breed) {
-        this.name = name;
-        this.breed = breed;
+    public Dog() {
     }
-
-    public Dog() {}
 
     public Long getId() {
         return id;
@@ -47,7 +43,7 @@ public class Dog {
     }
 
     public void setBreed(String breed) {
-        this.breed = breed;
+        breed = breed;
     }
 
     public String getOrigin() {
@@ -55,7 +51,6 @@ public class Dog {
     }
 
     public void setOrigin(String origin) {
-        this.origin = origin;
+        origin = origin;
     }
 }
-
