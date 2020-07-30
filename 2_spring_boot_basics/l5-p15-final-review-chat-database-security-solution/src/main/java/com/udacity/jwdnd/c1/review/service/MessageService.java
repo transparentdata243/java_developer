@@ -19,6 +19,8 @@ public class MessageService {
 
     @PostConstruct
     public void postConstruct() {
+        // cannot move this.messageMapper = messageMapper; here
+        // other initailization logic can be put here
         System.out.println("Creating MessageService bean");
     }
 

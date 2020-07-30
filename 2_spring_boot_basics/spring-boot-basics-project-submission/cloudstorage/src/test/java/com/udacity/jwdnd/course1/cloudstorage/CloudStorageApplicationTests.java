@@ -23,8 +23,8 @@ import java.util.List;
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class CloudStorageApplicationTests {
 
-	private static String USER_NAME = "userName";
-	private static String USER_NAME_FIELD = "userName";
+	private static String USER_NAME = "username";
+	private static String USER_NAME_FIELD = "username";
 	private static String PASSWORD = "password";
 	private static String PASSWORD_FIELD = "password";
 
@@ -57,21 +57,6 @@ class CloudStorageApplicationTests {
 	public void getLoginPage() {
 		driver.get("http://localhost:" + this.port + "/login");
 		Assertions.assertEquals("Login", driver.getTitle());
-	}
-
-	@Test
-	@Order(4)
-	public void testLoginSuccess(){
-		driver.get("http://localhost:" + this.port + "/");
-		driver.manage().window().maximize();
-		JavascriptExecutor jse =(JavascriptExecutor) driver;
-		WebElement username = driver.findElement(By.name(USER_NAME_FIELD));
-		username.sendKeys(USER_NAME);
-		WebElement password = driver.findElement(By.name(PASSWORD_FIELD));
-		password.sendKeys(PASSWORD);
-		WebElement login = driver.findElement(By.id("login"));
-		login.click();
-		Assertions.assertEquals("Home", driver.getTitle());
 	}
 
 	@Test
@@ -136,6 +121,21 @@ class CloudStorageApplicationTests {
 		wait.until(ExpectedConditions.elementToBeClickable(login));
 		jse.executeScript("arguments[0].click()", login);
 
+		Assertions.assertEquals("Home", driver.getTitle());
+	}
+
+	@Test
+	@Order(4)
+	public void testLoginSuccess(){
+		driver.get("http://localhost:" + this.port + "/");
+		driver.manage().window().maximize();
+		JavascriptExecutor jse =(JavascriptExecutor) driver;
+		WebElement username = driver.findElement(By.name(USER_NAME_FIELD));
+		username.sendKeys(USER_NAME);
+		WebElement password = driver.findElement(By.name(PASSWORD_FIELD));
+		password.sendKeys(PASSWORD);
+		WebElement login = driver.findElement(By.id("login"));
+		login.click();
 		Assertions.assertEquals("Home", driver.getTitle());
 	}
 
